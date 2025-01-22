@@ -1,0 +1,17 @@
+Arena:
+The arena for ISRO robotics challenge URSC-2024 is:-
+1.	Size of arena: 5m x 10m
+2.	Filling material of arena: M-sand
+3.  Sloped terrain: A sloped terrain with inclination of 15⁰ and inclined length of 2 m filled
+    with M-sand and distributed with obstacles and craters.
+4.  Obstacles: Cubes of sides 150 and 300 mm. The obstacles will be made from wood and
+    planted firmly in the Arena. The rover traversal over them will not disturb their position.
+5.  Craters: Craters are created by scooping out sand from the arena. These craters will be
+    approximately hemispheres with diameter 200 and 400 mm.
+6.  Boundaries of the arena will be marked distinctly.
+7.  The starting point (SP) is a 1200mm x 1200mm square block at the corner.
+8.  The way point is the point from where the rover will identify and pick up the test tube, it will be 1100mm x 1100mm.
+9.  The target point (FP) is located in a 1500mm diameter circle.
+10. There are 2 types of craters, 200m diameter and 400mm diameter.
+11. There are 2 types of obstacles, cubes of 150mm side and cubes of 300mm side.
+
