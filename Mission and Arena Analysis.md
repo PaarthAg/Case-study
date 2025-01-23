@@ -29,36 +29,32 @@ Rover and Manupilator (Arm) requirments:
 
 
 Task:
-3.2.1. Overview of the Field Task:
-a. Team members will place the rover inside one of the parking areas marked at each entry
-points.
-b. Rover has to traverse and arrive at the parking area at one of the exit points.
-c. The tasks are identified as:
-1. Task-1: Autonomous Navigation (mandatory)
-2. Task-2: Autonomous Sample pick and drop (mandatory)
-3. Task-3: Repeat the Task-1 & Task-2 until all the samples are dropped in the
-sample container
-4. Task-4: Identification of bonus markers
-d. During the task rover must autonomously plan a safe path to:
-1. [Task-1a] arrive at sample location
-2. [Task-2a] pick the sample
-3. [Task-1b] carry the sample to the drop location
-4. [Task-2b] drop the sample
-5. [Task-3: all 3 samples] repeat steps (1)-(4) for the remaining two samples
-6. [Task-1c] arrive at exit location
-7. [Task-4: Identification of bonus markers] search for and identify bonus markers
-located randomly in the terrain
-Knowns:
-1. The position coordinates will be provided for
-i. sample tubes
-ii. container
-iii. entry and exit points
-iv. photos of traversable obstacles will be shared
-Unknowns:
-1. The obstacles (Traversable & Non-traversable) and craters (Traversable) will be
-randomly distributed. The participants will not be provided with any details
-regarding the coordinates of obstacles and craters.
-2. Coordinates of the bonus markers placed in the arena will not be provided.
+1. Segment 1: Commanded Waypoint Navigation
+    Rover should move from starting position to waypoint ‘WP’ in a commanded manner and must navigate obstacles ‘2’, ‘12’ and ‘4’. The path planning can be done offline and rover can be commanded with exact path for this        segment. Failure to traverse any obstacle mentioned earlier will attract penalty points.
+    Objectives of this segment include demonstration of rover capability to
+    1. navigate obstacles
+    2. follow commanded path
+
+2.  Segment 2: Autonomous Sample Pick Up
+    After arriving at the waypoint, rover must autonomously
+    1. Identify the sample
+    2. Approach the sample
+    3. Pick the sample
+    All these tasks must be accomplished autonomously without intervention of the team members (physical or otherwise). In case of contingency or failure of autonomous mode, commanded mode can be exercised and this will         attract penalty points.
+
+3. Segment 3: Autonomous Navigation
+    Picked-up sample must be transported to the sample drop position while navigating the obstacles autonomously. All obstacles (cubes and craters) must be identified by the onboard sensors and appropriately avoided by          rover mobility system to plan optimal path.
+    Rover is allowed to traverse the 150mm cube (yellow obstacles) without any penalty on score, however any physical interaction with 300mm cube (green obstacles) will attract penalty points.
+    Similarly, rover is allowed to traverse the 200mm diameter craters without any penalty on score; however, any physical interaction with 400mm diameter craters will attract penalty points.
+
+4. Segment 4: Autonomous Sample Drop
+    Picked-up sample must be transported to the sample drop position while navigating the obstacles autonomously. Rover must identify the container and required orientation of sample tube for placement. The sample can be        transferred autonomously into the container. Switching to commanded mode during any part of this segment will attract penalty points.
+
+5. Segment 5: Autonomous Final Positioning
+    After dropping the sample, rover must come out of ‘FP’ and positioned nearer to ‘FP’ Switching to commanded mode during autonomous final positioning will attract penalty points.
+
+
+
 
 
 
