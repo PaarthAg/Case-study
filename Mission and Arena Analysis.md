@@ -1,3 +1,4 @@
+For the Qualifiers round:
 Arena:
 The arena for ISRO robotics challenge URSC-2024 is:-
 1.	Size of arena: 5m x 10m
@@ -52,9 +53,10 @@ Task:
 
 5. Segment 5: Autonomous Final Positioning
     After dropping the sample, rover must come out of ‘FP’ and positioned nearer to ‘FP’ Switching to commanded mode during autonomous final positioning will attract penalty points.
+   *there will be no colour coding for the obstacles.
 
-
-
-
-
-
+My Insights:-
+1. The arena and the task plan has been made to test the rover for the conditions that might simulate the moons conditions on earth's gravity.
+2. The first task is to reach from start point to way point by traversing about all the obstacles in between, so there are 3 small obstacles in between, which are 2 15cm side blocks and 1 20cm diameter crater. TO traverse      through both we need to make a system that can do the following:
+   i) **Detect the crater and the block**: We have to keep in mind that there is no atmosphere on the moon so the use of something like the ultrasonic sensor will be not viable. So the best alternate we got is using cameras                                            to see the obstacle, use open cv and other machine learning algorithms to help the rover detect the block and craters. Aother good part of using the cameras will be that the                                                   organisers have already told that there will be a well lit environment and we can use computer vision to even know the distance and the dimensions of our obstacles (we have to                                                 read those values as a part of the challenge too).
+   ii)**Drive mechanism**: We have to be able to make a drive system that can easily go over a block of sides equal to 15cm and craters of diameter of 20cm. To achieve this we would need to make body with ground clearence                              greater than 30cm to be able to move  over the block or just move aside from the big blocks, no air in the tyres so the tyres do not pop when they are in contact with sharp edges and also we need                             to maintain stability during such traversal. So for that we can make a drive sytem with rubber (for grip) tyres with no air (in earth conditions, we use an air filled zinc coated piano mesh to                                provide rigidity and to avoid  bursting of tyres due to digh speed moon dust). For the stability we may use a 6 tyre mechanism that will raise/descend its legs (by using motors) when moving over                              the obstacles one by one and till then the other 5 wheels will keep the balance of the rover providing it stability which will help us read the surrounding using the camera more easily. The other                             alternative can be using a  very carefully tuned hydraulic supension system for the 6 wheel drive that will be able to easily make the wheel climb and descend over the obstacles. In the whole 1st                             mechanism of drive the camera system has to help us predict that which wheel has to be lifted and when, alternatively for the 2nd mechanism we will need to have tyres of radius upwards of 15cm and                            for both of the cases body will have to have ground clearence in accordance to raise the tyres.
