@@ -66,6 +66,87 @@ My Insights:-
 5.Next when the rover has reached in the drop zone (1500mm diameter circular region), we may use the cameras to identify the blue tube and use algorithms that approach the drop point and use the arm to drop the sample         target.
 6.Final task for the robot is to come out of the final point (1500mm diameter circle) and position itself nearer to the final point autonomously, which can be done by measuring disance from the the tube to know that we are out of the final position zone and also keep in mind of the obstacles that might be in its surroundings.
 
+For the field round:-
+Arena:
+1. Size of the arena: 12 m X 9 m.
+2. Known elements in the arena:
+ a) 4 m dia. traversable crater with a depth of 200 mm and the slope of the rim is < 15˚
+ b) 2.5 m dia. traversable hump with a height of 260 mm made up of M-sand
+ c) Hard terrain
+ d) Non-traversable wall of height of 0.8 m
+ e) Traversable slot with a length of 1.8 m, width of 0.6 m and depth of 100 mm
+3. Filling material of arena: M-Sand (100 mm depth)
+4. Entry Points: 2 Entry points are provided with different difficulty levels. Team can choose any point as per their rover capability. Choosing difficult entry (entry-1) will have more scoring weightage. Please refer         section 4 for scoring criteria. Width of entry point will be nearly 1.5m.
+5. Sample: In total, 3 samples will be present in the arena at three different locations with different difficulty level. A rover can pick any number of samples in the given time.
+6. Identification Markers: Few bonus markers will be placed in the arena at random locations. The locations may vary for each team. Bonus markers will be coloured and star-shaped.
+7. Traversable Obstacles: Obstacles of random shape/sizes (the size of the sample will the limited within 150x150x150 mm) will be distributed within the arena at unknown locations.
+8. Non-traversable obstacles: These obstacles of random shape/size (300x300x300 mm > x > 800x800x800 mm) will be placed randomly. These obstacles are meant to be avoided. There is no limitation in the size of these obstacles
+9. Craters: Craters are created at random locations and depth of the craters will be limited within 200 mm.
+10. Hard Terrain: Hard surface without any M- Sand will be present within arena which is traversable and it will be flushed to m-sand height.
+11. Exit Points: 2 Exit points are provided. Team can choose any point as per their convenience. Choosing exit-1 will fetch more weightage of marks
+12. Boundary: 200 mm boundary edges will be provided and marked with yellow paint for clear demarcation
+13. Separation between any two non-traversable obstacles will be maintained more than 1m.
+Note: Number and coordinates of traversable obstacles, non-traversable obstacles and craters will not be disclosed.
 
+Rover and Manupilator requirments: Same as qualifier round
 
+Tasks:
+**Task-1: Autonomous Navigation Task**:
+The team is required to design and demonstrate the performance of rover’s navigation by traversing from entry point to sample collection point (of the choice the team) and subsequently to the container point and then exit from one of the identified locations. Rover can traverse in any path. The teams are allowed to give maximum 4 commands if required in the total task at the following checkpoint which are as follows:
+1. At the start of the task (at entry point-1 or 2)
+2. After the drop of first sample
+3. After the drop of second sample
+4. After the drop of third sample
+Following navigation tasks needs to be performed:
+a) Entry: The team can choose from two available options. Entry-1 will fetch more points.
+b) Obstacle identification using sensors: The sensors shall be capable of identifying the dimension of the obstacles and take appropriate decisions.
+c) Craters identification using sensors: The sensors shall be capable of identifying the size of the craters.
+d) Sample location identification: OD 80 mm, L 125 mm (approx.) red in colour
+e) Container location identification: A cylindrical container of diameter 150 mm and height 150 mm, which is placed at the target location, needs to be identified
+f) Locations of the sample tubes (centre axis):
+1. Sample Tube-1: (3.5 m, 6.5 m) – placed inside the 4 m traversable crater
+2. Sample Tube -2: (9.9 m, 1.35 m) – placed on the 2.5 m traversable hump
+3. Sample Tube-3: (8 m, 6 m) – placed on the hard terrain
+g) Locations of the sample container (centre axis): (11.5 m, 8.3 m)
+h) Exit parking:
+1. Exit-1 position: 1.5 m x 1.5 m square with a centre of (11.3 m, 4.35 m)
+2. Exit-2 position: 1.5 m x 1.5 m square with a centre of (8.83 m, 8.3 m)
+Note: The sample tube, container and exit locations coordinates can have ± 0.5m variation from the above-mentioned coordinates
+i) The boundary will be marked with yellow for clear distinction. The entry and exit boxes will be marked with white boundaries
+![image](https://github.com/user-attachments/assets/41ae67b6-8889-4f53-b462-a81f041accfe)
 
+**Task-2: Autonomous Sample Picking and Placing:**
+a) The sample pick and-place task needs to be accomplished by a manipulator arm mounted on the chassis.
+b) Target identification using visual sensors: A tube which represents sample to be collected forms the target for the Rover. Following are the details of the sample that needs to be identified successfully before being picked up:
+
+Details of sample (tube):
+![image](https://github.com/user-attachments/assets/23b69346-2018-44e2-af3f-387bf29b07ef)
+
+Details of sample container:
+![image](https://github.com/user-attachments/assets/dd37d4d8-81be-4ea3-a2b9-19875138d84f)
+
+c) Picking and securely holding the sample: The sample tube needs to be picked up from the surface using a gripper. The sample then needs to be held securely by the rover before mobility is initiated.
+d) Unloading and placement: The rover needs to approach and unload the sample into the cylindrical container.
+e) After each drop of sample tube in the container it will be removed from the container, making place for the next sample tube.
+f) Picking and Dropping of each sample is an independent event and rover should handle only one sample at any point of time.
+Note: The sample tube can be placed in any orientation at its designated location
+
+**Task-3: Repeat the Task-1 & Task-2 until all the samples are dropped in the sample container:**
+The rover needs to repeat the Task-1 & Task-2 until all the samples Are dropped in the sample container. Only change is the rover will be at sample container location after drop of 1st sample and 2nd sample.
+
+**Task-4: Identification of specific markers**:
+Identification of bonus targets includes the following:
+1. Capturing its images/shape with some sensor.
+2. All the bonus targets are marked with distinctive number and the team also needs to identify the number
+3. Coordinates of the particular bonus target to be identified with a variation of ± 0.5m
+   Details of the Bonus Marks:
+   ![image](https://github.com/user-attachments/assets/811d1a36-5e92-4281-b69c-e5bb3612765e)
+
+The full marks for the identification of bonus marks will only be allotted if a proof of detection and allotted number are provided along with coordinates. However, a partial mark will be given if all the requirements are not satisfied.
+
+My insights:
+1. In this stage we will be given the coordinates of the points where the sample tubes are, where the big ditch is, where the sand hill is and where the drop point is. So we would not need a any camera to scan and detect the drop point and only one camera would be enough to detect the obstacles, sample tubes and the drop point.
+2. The drive mechanism as the same would be good enough to support the tasks in this round, just we owuld need motors that have high torque in order to climb over 15 degrees of elevation.
+3. The robot will just move towards the point it wants to go, just if any untraversable object comes in front of it , it will just avoid it and keep doin that until it reaches to the desired points and it will also map the obstacles each times it encounters them in order to optimize its path in the further navigation.
+4. The mechanism used to accurately pick up the sample tube and drop it will be the same.
+5. The bonus marker's image will be preprocessed in the system hence it will be detected whenever it encounters the bonus marker and register its photo and other information in the system.
