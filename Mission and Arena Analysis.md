@@ -1,6 +1,33 @@
-For the Qualifiers round:
+Introduction:
+ISRO wants to progress into the fields of artificial intelligence and machine learning and space robotics as it looks forward to its ISRO in-orbit servicer mission, Lunar sample return mission, space docking mission, etc..All of these steps are natural after the succes found by the Chandrayan 3 mission. As a plan for further progress ISRO had decided to launch the ISRO robotics challenge 2024 where they motivate students to give innovative ideas and prototype them which can perform specific tasks in conditions similar to the lunar surface. These solutions to problems faced by the rovers right now have high chances of being implemented by ISRO in their next missions.
+
+The objectives of this challenge are to:-
+1. provide a platform for exploring the domain of space robotics.
+2. To help the students increase their critical thinking and problem solving skills related to the areas of space robotics.
+3. To develop innovative solutions for the future of ISRO.
+The challenge is designed in such a way that is inspired by the extra-tereestrial conditions and hence forces students to solve problems that are originated in real missions too, and hence the competitors are forced to use all of their problem solving in order to find the most economical ways to finish the tasks. In this document I will be analysing the arena, rules and task and finding possible ways to approach the problems given to us.
+
+Contents:-
+
+1.Qualifier Round
+
+    1.1.Arena described for the qualifiers round
+    1.2.Rover and Manupilator requirements (same for all the rounds)
+    1.3.Tasks to be performed in this round
+    1.4.My insights on how can we achieve these tasks
+
+2.Field Round
+
+    2.1.Arena described for the Field round
+    2.2.Rover and Manupilator requirements (same for all the rounds)
+    2.3.Tasks to be performed in the Field round.
+    2.4.My insights on how can we achieve the given tasks.
+
+3.What can be done overall
+
+**For the Qualifiers round:**
+
 Arena:
-The arena for ISRO robotics challenge URSC-2024 is:-
 1.	Size of arena: 5m x 10m
 2.	Filling material of arena: M-sand
 3.  Sloped terrain: A sloped terrain with inclination of 15⁰ and inclined length of 2 m filled with M-sand and distributed with obstacles and craters.
@@ -58,15 +85,23 @@ Task:
 My Insights:-
 1. The arena and the task plan has been made to test the rover for the conditions that might simulate the moons conditions on earth's gravity.
 2. The first task is to reach from start point to way point by traversing about all the obstacles in between, so there are 3 small obstacles in between, which are 2 15cm side blocks and 1 20cm diameter crater. TO traverse      through both we need to make a system that can do the following:
-   1. **Detect the crater and the block**: We have to keep in mind that there is no atmosphere on the moon so the use of something like the ultrasonic sensor will be not viable. So the best alternate we got is using camera       to see the obstacle, use open cv and other machine learning algorithms to help the rover detect the block and craters. Aother good part of using the cameras will be that the organisers have already told that there           will be a well lit environment and we can use computer vision to even know the distance and the dimensions of our obstacles (we have to read those values as a part of the challenge too). We can use sterero vision(2          cameras) or give the rover obstacles preknown dimensions as reference to measure the distance from the rover.
-   2.**Drive mechanism**: We have to be able to make a drive system that can easily go over a block of sides equal to 15cm and craters of diameter of 20cm. For this we can use many suspension systems such as the positive         and negative quadrilateral levers suspension mechanism which is excellent for climbing over obstacles (220mm considering frictional constants of moon surface and does not need the wheel's radius to be bigger than the        obstacle), smooth travelling, equal distribution of load to all 6 wheels and can be folded easily for easy carrying or maybe use the rocker bogie system that can climb upto 20-30cm obstacles (much simpler and hence          better for this case).
-   3.**Turning**: We should use a diffrential drive system for such a project as that is much easier to use and avoids using extra motors to turn.
-3.The second task is to identify and pick up the sample, so for that, as we can already set the path of the rover we may not use a rotating camera and the camera can detect the distance between the target sample and us,       then we can use the manupilator to pickup the sample, the manupilator needs only 3 degrees of motion if our diffrential drive is good enough and would need 1 degree to descend/ascend and the other to approach/distance the   target sample and the last one to rotate the sample in order to fit it in the tube as the tube is in a vertical orientation.
+
+I. **Detect the crater and the block**: We have to keep in mind that there is no atmosphere on the moon so the use of something like the ultrasonic sensor will be not viable. So the best alternate we got is using camera       to see the obstacle, use open cv and other machine learning algorithms to help the rover detect the block and craters. Aother good part of using the cameras will be that the organisers have already told that there          will be a well lit environment and we can use computer vision to even know the distance and the dimensions of our obstacles (we have to read those values as a part of the challenge too). We can use sterero vision(2         cameras) or give the rover obstacles preknown dimensions as reference to measure the distance from the rover.
+
+II.**Drive mechanism**: We have to be able to make a drive system that can easily go over a block of sides equal to 15cm and craters of diameter of 20cm. For this we can use many suspension systems such as the positive         and negative quadrilateral levers suspension mechanism which is excellent for climbing over obstacles (220mm considering frictional constants of moon surface and does not need the wheel's radius to be bigger than the       obstacle), smooth travelling, equal distribution of load to all 6 wheels and can be folded easily for easy carrying or maybe use the rocker bogie system that can climb upto 20-30cm obstacles (much simpler and hence         better for this case).
+
+III.**Turning**: We should use a diffrential drive system for such a project as that is much easier to use and avoids using extra motors to turn.
+
+3.The second task is to identify and pick up the sample, so for that, as we can already set the path of the rover we may not use a rotating camera and the camera can detect the distance between the target sample and us,      then we can use the manupilator to pickup the sample, the manupilator needs only 2 degrees of motion if our diffrential drive is good enough and would need 1 degree to descend/ascend and the other to approach/distance      the target sample .
+
 4.Now we need the rover to navigate the terrain automatically to the sample drop point. For the detection of where the drop point is we may need a camera up high (under the height limit) which will scan the surroundings       and identify where the drop point is. Next the rover must identify the obstacles in between itself and the blocks, and choose the most efficient path considering its ability to traverse through different types of            obstacles.
+
 5.Next when the rover has reached in the drop zone (1500mm diameter circular region), we may use the cameras to identify the blue tube and use algorithms that approach the drop point and use the arm to drop the sample         target.
+
 6.Final task for the robot is to come out of the final point (1500mm diameter circle) and position itself nearer to the final point autonomously, which can be done by measuring disance from the the tube to know that we are out of the final position zone and also keep in mind of the obstacles that might be in its surroundings.
 
 For the field round:-
+
 Arena:
 1. Size of the arena: 12 m X 9 m.
 2. Known elements in the arena:
@@ -91,7 +126,7 @@ Note: Number and coordinates of traversable obstacles, non-traversable obstacles
 Rover and Manupilator requirments: Same as qualifier round
 
 Tasks:
-**Task-1: Autonomous Navigation Task**:
+Task-1: Autonomous Navigation Task:
 The team is required to design and demonstrate the performance of rover’s navigation by traversing from entry point to sample collection point (of the choice the team) and subsequently to the container point and then exit from one of the identified locations. Rover can traverse in any path. The teams are allowed to give maximum 4 commands if required in the total task at the following checkpoint which are as follows:
 1. At the start of the task (at entry point-1 or 2)
 2. After the drop of first sample
@@ -115,7 +150,7 @@ Note: The sample tube, container and exit locations coordinates can have ± 0.5m
 i) The boundary will be marked with yellow for clear distinction. The entry and exit boxes will be marked with white boundaries
 ![image](https://github.com/user-attachments/assets/41ae67b6-8889-4f53-b462-a81f041accfe)
 
-**Task-2: Autonomous Sample Picking and Placing:**
+Task-2: Autonomous Sample Picking and Placing:
 a) The sample pick and-place task needs to be accomplished by a manipulator arm mounted on the chassis.
 b) Target identification using visual sensors: A tube which represents sample to be collected forms the target for the Rover. Following are the details of the sample that needs to be identified successfully before being picked up:
 
@@ -131,10 +166,10 @@ e) After each drop of sample tube in the container it will be removed from the c
 f) Picking and Dropping of each sample is an independent event and rover should handle only one sample at any point of time.
 Note: The sample tube can be placed in any orientation at its designated location
 
-**Task-3: Repeat the Task-1 & Task-2 until all the samples are dropped in the sample container:**
+Task-3: Repeat the Task-1 & Task-2 until all the samples are dropped in the sample container:
 The rover needs to repeat the Task-1 & Task-2 until all the samples Are dropped in the sample container. Only change is the rover will be at sample container location after drop of 1st sample and 2nd sample.
 
-**Task-4: Identification of specific markers**:
+Task-4: Identification of specific markers:
 Identification of bonus targets includes the following:
 1. Capturing its images/shape with some sensor.
 2. All the bonus targets are marked with distinctive number and the team also needs to identify the number
@@ -150,3 +185,38 @@ My insights:
 3. The robot will just move towards the point it wants to go, just if any untraversable object comes in front of it , it will just avoid it and keep doin that until it reaches to the desired points and it will also map the obstacles each times it encounters them in order to optimize its path in the further navigation.
 4. The mechanism used to accurately pick up the sample tube and drop it will be the same.
 5. The bonus marker's image will be preprocessed in the system hence it will be detected whenever it encounters the bonus marker and register its photo and other information in the system.
+
+**What can be done overall:-**
+1.For Sensing and Seeing Objects: sensing and seeing objeets can be done by the following methods and would be used after seeing their accuracy, cost and effectiveness:-
+
+I.Camera: We can use AI training models and openCV to see the area around us just like the humans and map the area around us, this can be used to identify colour of the sample tube too. Camera is a must for perfect identification of the sample tube and the drop point. Camera can very easily be cheap, its accuracy is based on the accuracy of the trained AI model to map its surroundings and would be very effective.
+
+II.Lidar: Lidar is a very expensive solution of this problem but it will map out the surroundings pretty well, but still it will need a camera to identify the colour codes and will not be very efficient.
+
+III.IR Sensor + Camera: we can use this combination we find trouble in finding distances of the objects from the robot but still it would not be able to help with detecting the dimensions of the objects, hence making the use of IR sensor pretty redundant.
+
+Hence we can be sure that the use of Cameras with a properly trained openCV AI trained model will be the easiest and the most cost effective way to detect the sample tube and drop points along side the obstacles.
+
+2.For Driving: For driving we should be using diffrential drive as it uses the least amounts of motors for turning and is very simple to program. We should use a Rocker-bogie suspension system for its simplicity and ability to satisfy the tasks given successfully.
+
+3.Manupilator: We will need a manupilator with 2 degrees of freedom which will be:-
+
+I.The Degree which will make the arm approach and distance from the target, this would be like our elbow joint.
+
+II.The degree which will look on the arm goin up and down, this would be like our shoulder.
+
+We would not need anything like the wrist as the drop point is wde enough to let the sample tube drop lengthwise. This is considering a decent driffrential drive system, or else we would need another degree of freedom to move the arm sideways to ensure an accurate picking and droping of the sample tube.
+
+4.Communication: As specified by the rule book, we must use radio signals for any communication with the robot and the radio frequency needs to be legal to use.
+
+5.Algorithms: The algorithms will have to be such that they keep moving  maping the map and try to find the path with the least no. of non traversable obstacles to complete the task faster. The unmapped obstacles would be mapped upon each encounter and the path mus update according to the new map.
+
+6.We need tyres which would have incredible grip or have discrete circumference to be able to move easily throught the sand and also be able to climb the sharp edged 15cm block.
+
+7.Computer: We would need a computer that can run good algorithms and not be very costly.
+
+8.What the most efficent algorithm should do:-
+
+I. Qualifier round: The robot will easily navigate throught the small obstacles as per the pre input path till the way point, at the way poin the camera at front will work upon picking up sample tube with the help of manupilator, and the camera installed at the top will be scouting for the blue drop point. When the drop point is identified, we shall where the other large obstacles are and see if nonne are in the direct path, if there are none then the robot should move straight to the drop point after turning keeping in mind that its sides must not be touching the untouchable obstacles and would be identifying the traversable obstacles whenever they are encounterd. Now the rover shall drop the sample tube again using the combination of its camera and the manupilator. At the end the rover shell back up to the path it took previously just enough that it is out of the final position circle.
+
+II. Field Round: To fetch more points we shall take entry from the entry point 1, then the robot shall compute that approaching which sample tube would be easiest for it at first, we need to keep in mind that we do not need to take traversable slot as there are no points added to traverse through it hence it would be easier for the robot to leave from the other side of the untraversable wall and then just move down the ditch, fetch the tube and run for the drop point keeping the traversable and untraversable in consideration. The rover shal also remember that there would be a gap greater than 1m between 2 untraversable obstacles, so it should ot just change direction after encountering any untraversable obstacle but always look for the turn after 1m. We may need 2 camera setup for this round too, so the camerab below should be always lookin gofr the bonus markers while the the upper camera should be watching out for the untraversable blocks. If the bonus Markers are not found even after completing the droping of all 3 tubes and there is some time left then we shall use that time to run around and look for those markers, but the rover must be able to estimate the time it would need to exit from its position, and must abort the mission of finding bonus markers immediately after the time left is too less.
