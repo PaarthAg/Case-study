@@ -5,7 +5,9 @@ The objectives of this challenge are to:-
 1. provide a platform for exploring the domain of space robotics.
 2. To help the students increase their critical thinking and problem solving skills related to the areas of space robotics.
 3. To develop innovative solutions for the future of ISRO.
-The challenge is designed in such a way that is inspired by the extra-tereestrial conditions and hence forces students to solve problems that are originated in real missions too, and hence the competitors are forced to use all of their problem solving in order to find the most economical ways to finish the tasks. In this document I will be analysing the arena, rules and task and finding possible ways to approach the problems given to us.
+The challenge is designed in such a way that is inspired by the extra-tereestrial conditions and hence forces students to solve problems that are originated in real missions too, and hence the competitors are forced to use all of their problem solving in order to find the most economical ways to finish the tasks.
+
+In this document I will be analysing the arena, rules and task and finding possible ways to approach the problems given to us.
 
 Contents:-
 
@@ -24,6 +26,15 @@ Contents:-
     2.4.My insights on how can we achieve the given tasks.
 
 3.What can be done overall
+   
+    3.1.Sensing
+    3.2.Drive
+    3.3.Manupilator
+    3.4.Communication
+    3.5.Algorithms
+    3.6.Computer
+    3.7.Efficient algorithm/ plan of action
+    
 
 **For the Qualifiers round:**
 
@@ -217,6 +228,6 @@ We would not need anything like the wrist as the drop point is wde enough to let
 
 8.What the most efficent algorithm should do:-
 
-I. Qualifier round: The robot will easily navigate throught the small obstacles as per the pre input path till the way point, at the way poin the camera at front will work upon picking up sample tube with the help of manupilator, and the camera installed at the top will be scouting for the blue drop point. When the drop point is identified, we shall where the other large obstacles are and see if nonne are in the direct path, if there are none then the robot should move straight to the drop point after turning keeping in mind that its sides must not be touching the untouchable obstacles and would be identifying the traversable obstacles whenever they are encounterd. Now the rover shall drop the sample tube again using the combination of its camera and the manupilator. At the end the rover shell back up to the path it took previously just enough that it is out of the final position circle.
+I. Qualifier round: The robot will easily navigate throught the small obstacles as per the pre input path till the way point, at the way point the camera at front will work upon picking up sample tube with the help of manupilator, and the camera installed at the top will be scouting for the blue drop point. When the drop point is identified, we shall where the other large obstacles are and see if nonne are in the direct path, if there are none then the robot should move straight to the drop point after turning keeping in mind that its sides must not be touching the untouchable obstacles and would be identifying the traversable obstacles whenever they are encounterd. Now the rover shall drop the sample tube again using the combination of its camera and the manupilator. At the end the rover shell back up to the path it took previously just enough that it is out of the final position circle.
 
 II. Field Round: To fetch more points we shall take entry from the entry point 1, then the robot shall compute that approaching which sample tube would be easiest for it at first, we need to keep in mind that we do not need to take traversable slot as there are no points added to traverse through it hence it would be easier for the robot to leave from the other side of the untraversable wall and then just move down the ditch, fetch the tube and run for the drop point keeping the traversable and untraversable in consideration. The rover shal also remember that there would be a gap greater than 1m between 2 untraversable obstacles, so it should ot just change direction after encountering any untraversable obstacle but always look for the turn after 1m. We may need 2 camera setup for this round too, so the camerab below should be always lookin gofr the bonus markers while the the upper camera should be watching out for the untraversable blocks. If the bonus Markers are not found even after completing the droping of all 3 tubes and there is some time left then we shall use that time to run around and look for those markers, but the rover must be able to estimate the time it would need to exit from its position, and must abort the mission of finding bonus markers immediately after the time left is too less.
