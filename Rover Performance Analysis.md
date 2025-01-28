@@ -4,7 +4,9 @@ Contents:
 
 1.**Team Obseract-Jadavpur University**:-
 
+
 1.1.Size and weight: size: 87cmx70cmx77cm, weight: 39kg
+
 
 1.2.Suspension system:
 
@@ -22,6 +24,7 @@ Here MER is Mars exploration rover.
 
 -The use of Rocker bogie suspension makes it obvious that diffrential driving technique is used to turn to robot for all the cases and the slow speed of the rover helps the rover to make very minute turns, which further helps us eliminate the use of another degree of movement for the manupilator and the drive itself aids the manupilator in pickup of the sample accurately.
 
+
 1.3.Tyres: 
 
 To traverse in the M-sand area the rover used wheels of the following properties:-
@@ -32,7 +35,6 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -The slow speed and ability to climb the 15 degrees slope shows us the power of its motor, meaning that the motors used priortize on torque and not angular speed.
 
--The radius of the wheel seems to be greater than the height of the block out of the M-sand, that is 15cm. This enables th wheels to climb over the block much more easily and require much less force to generate enough friction to climb over the block. This also eases the wheels movement throught the 20cm diameter crater and makes the overall ride of the rover very smooth.
 
 1.4.Camera System:
 
@@ -83,6 +85,7 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -The Jetson Orin Nano and the STM32F407VET6 can be used together in the same robot as the Nano will be used for processing images (openCV applications) and run all the algorithms and at the same time the dev module will be used to manage the motors and all the other sensors that do not require high ammounts of processing. The 2 developer boards will co-exist in the rover. The team here used the STM32F407VET6 DEV MODULE  to control the robotic arm by taking the data from the camera processed by the jetson orin nano, and another board (not specified, maybe STM32F407VET6 or the Nano) is used for the control of the wheel drive.
 
+
 1.6.Manupilator:
 
 -The manupilator used by team obseract is of a screw type system in which one jaw of the manupilator stays still, there is an axle passed through the jaws which has threads and works like a screw to help the other jaw move by rotating the screw type axle. This jaw is good as the rotation of motor can be very precise, hence making the manupilator go easy on the sample tube and not excert too much pressure on the tube as good care of tube also carries some points.
@@ -91,6 +94,79 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -![image](https://github.com/user-attachments/assets/c4a848f8-10cb-4b78-bc65-02c9a9cfccca)
 
+
 1.7.Algorithms: No information to be found obout their game plan and their algorithms
 
 
+
+2.**Team Samarth - Sharda University**:-
+
+2.1. Size and weight: size: 98cm x 57cm x 73cm, weight: Unspecified.
+
+2.2. Suspension system:-
+
+-This team too uses rocker bogie mechanism due to its simpicity and ability to do the required tasks very easily. They have used PVC pipes with a coating of acrylic paint for the suspension, this is due to its ability to support very heavy loads and its light weight.
+
+-The team has also used 2 cross suspension, ie. 2 hydraulic suspensions connecting bogie with the main chasis of the rover. This suspension ensures smooth ascend and descend of the rover at each of the obstacles and helps the overall smoothness of the ride of the rover.
+
+-This team too uses diffrential drive mechanism for turning.
+
+2.3. Tyres:-
+
+-The design of the tyres used by team samarth is very unique as the tyre is not one continous cylinder, and the cleats of the tyres are in different directions too.
+
+-![image](https://github.com/user-attachments/assets/0970100c-5f5d-4607-840c-507c36ee6d49)
+
+-The wheels are 3D printed with the PLA material which are sturdy enough to support the whole rover.
+
+-The cleats are similar to the ones that were used by team obseract but the design of wheel is way different.
+
+-The discrete wheel offers better traction in the M-sand arena, and also makes it very easy to climb over the 15 cm blocks.
+
+-This unique design also allows the rover to have smaller wheels as the climbing part eases out with the help of the design.
+
+-The motors used in the drive are able to produce 10 RPM and 600 N-m torque, showing us the importance of the low angular velocity high torque motors in this challenge.
+
+
+2.4.Camera systems:-
+
+-This team too uses openCV to detect the objects.
+
+-                                                                                          ///Lidar///
+
+-                                                                                         ///Ultrasonic///
+
+
+2.5. Electronics used:-
+
+-The system uses 5.8 GHz frrquency to communicate witht he control base and show the telemetry feed.
+
+-The transmitter reciever system for the rover is: transmiter:TS832 FPV transmiter, Reciever: RC832. This transmiter reciever pair is mostly used in FPV drones and show a very low latency feed.
+
+-For data transmission the team uses NRF24L01 PA LNA trans reciever module which operates on 2.4 GHz frequency and is used by the team to transmit data such as the data of the distance which is calculated live by the ground station computer.
+
+-The team seems to be using a their own comuputer as the one which does all the computational and openCV tasks and the rover just provides data to the ground station via radio signals and then the ground station works as the control system and then it send commands of what has to be done next to the rover. (This statement can be analysed by the video in which one of the team members mention live distance calculation telling about the data transmission system using the NRF24L01 PA LNA trans reviever module, which does not send the FPV feed, and hence the only use of it can be to help the rover perform the complex task like openCV remotely in the ground station).
+
+-The team mentions using a self designed motor driver board which is responsible for the precise movement of the motors during the mission.
+
+-Raspberry pi 4 (8 GB ram) computer is used by the team to process the information, this development board has the following properties:-
+
+1.64 bit processor.
+
+2.Quad core processor: This means that the processor is divided into 4 cores, out of which each core performs multiple tasks simeltaneously, which makes this a really strong processor for such a project.
+
+3.Is compatible with 2.4 GHz and 5 GHz frequency for communication, making it better for the already chosen transmitter reciever pair.
+
+-The raspbery pi is most likely used to control sensors and motors and transmit the required data to the ground station. The raspberry pi is more likely to control actuators than run the openCV program on itself due to the high amounts of load that it will have to face.
+
+-                                                                              ///resolve the main processing unit problem///
+
+2.6. Manupilator:-
+
+-The manupilator has 5 degrees of freedom.
+
+-The manupilator uses 5 25kg torque motors for high accuracy.
+
+-The teams are noticed to be using inverse kinematics to find the exact location of their claw and be able to pick up the sample tube. Even team obseract used this technology.
+
+-
