@@ -26,11 +26,9 @@ Here MER is Mars exploration rover.
 
 To traverse in the M-sand area the rover used wheels of the following properties:-
 
--Metal Rim
+-Hard rubber or 3D print plastic tyres with structured pattern of hard rectangular bumps that help the rover to generate the friction needed to travers the M sand. THe rubber plus the bump helps the rover to easily traverse the 15cm cube with the bump treading over the block and rubber providing the required friction to generate the upwards force that helps the rover climb.
 
--Hard rubber tyres with structured pattern of hard rectangular bumps that help the rover to generate the friction needed to travers the M sand. THe rubber plus the bump helps the rover to easily traverse the 15cm cube with the bump treading over the block and rubber providing the required friction to generate the upwards force that helps the rover climb.
-
--![image](https://github.com/user-attachments/assets/4f884ceb-c308-40f8-b8d7-292564f4866b)
+-![image](https://github.com/user-attachments/assets/46dde39b-7a50-4672-b249-747e3d6312a6)
 
 -The slow speed and ability to climb the 15 degrees slope shows us the power of its motor, meaning that the motors used priortize on torque and not angular speed.
 
@@ -52,18 +50,47 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -The detection of the different objects is a result of training an AI model using machine learning to be able to detect the objects and the object's annotations helps the rover to make decisions about the detected objects.
 
+-The team also uses a depth camera, which can measure the distance between itself and the objects using time taken for infrared signals to bounce back to the camera. The camera hence is able to make a 3D image of whatever it is seeing and makes this the perfect camera for such a project. This camera also reduces the need of using different techniques in openCV to find the distances between 2 objects by using 1 as refrence.
+
+-![image](https://github.com/user-attachments/assets/b466e60e-939b-46ff-9a96-b24426904540)
+
+
 1.5.Electronics used:
 
 -All the calculations, running of program, openCV detection and the sending of all the data collected (obstacles encountered and camera feed) is happening on the Jetson Orin Nano computer.
 
--Jetson Orin Nano is a developer board designed by Nvidia, and the board is designed to be able to process high load tasks such as running generative AI which helps the robot in this function to use AI and openCV to detect the elements in the challenge. The board is good enough to run all the algorithms that would ever be needed to complete this challenge making it the best option for this challenge. The cost will also not be a major issue as the board costs from 20,000 INR (Super model) to 77,000 (Normal model) and can be reused for the further projects that might be done by the team.
+-Jetson Orin Nano is a developer board designed by Nvidia, and the board is designed to be able to process high load tasks such as running generative AI which helps the robot in this function to use AI and openCV to detect the elements in the challenge. The board is good enough to run all the algorithms that would ever be needed to complete this challenge making it the best option for this challenge. The cost will also not be a major issue as the board costs from 20,000 INR (Super model) to 77,000 INR (Normal model) and can be reused for the further projects that might be done by the team. The one big flaw in the nano developer module is that its software and user interface is very bad and has been a problem for many developers.
+
+-For communication the team has used Ubiquiti LiteBeam M5 Antenna which operates in 5 GHz band and 23dBi gain which means that the antenna works really well for long distances and works with radio waves which makes this antenna very good for this project. The antenna is compact too hence does not trouble the design of the rover. The antenna uses a SISO (single input single output) system which makes it cheaper and simpler than a MIMO system which would had used multiple antennas and would have been costly (an overkill for such a project).
+
+-The team has also used gyro sensors/ angular velocity sensors to be able to know the yaw, pitch and roll of the robot, which must help rover know that how much power is needed by the motors and what elevation are they in, which further saves power and reduces the load on the battery.
+
+-For Gyroscopic and acceleration sensing the team has used an IMU sensor, which is multitasks to know the orientation and the velocity of the rover. IMU consists of 3 accelerometrs, 3 gyroscopes and 3 magnetometers. The program integrates the acceleration data once with respect to time to find the data of velocity. They used the BNO-055 IMU.
+
+-Even though the velocity data of accelerometer is ot that accurate, the slow speed of robot and the help of suspension in reducing the effect of external forces the error is not that significant in such a case.
+
+-![image](https://github.com/user-attachments/assets/e2147f7c-cf11-40e8-86e1-65eb2ad8b5f5)
+
+-The team uses also uses a STM32F407VET6 DEV MODULE to run the rover. The module is very good very good for such applications, details about STM32F407VET6 are:-
+
+1.Uses ARM Cortex M4 core with a floating point unit. Here Arm cortex M4 is a 32 bit micro processor and floating point unit is a hardware device that does mathematical operations on the floating points, the FPU is mostly used for digital signal analysis and control systems.
+
+2.The ARM Cortex M4 microprossecor uses DSP (digital signal processing) and hence it can be used to process all the data from the sensors and process them very efficiently. This includes digital to analog and anlog to digital conversion. This process uses the help of FPU.
+
+3.High clock speed (upto 168M MHz)
+
+4.Multiple communication interfaces, ie. USB, SPI, I2C and USART. Out of these options chances are that they used USART as USART is used for serial communication for longer distances (radio waves in this case), where as the SPI and I2C are used for communication between 2 different components of a circuit, such as the microprocessor and the sensors in the same circuit. Also the USART comes with error detection systems and can support asynchronous communication, so there is no need for a clock to be set and helps better for longer distances. The USART system needs wires, just that the data is tranmitted using antennas, transmitters and recievers.
+
+-The Jetson Orin Nano and the STM32F407VET6 can be used together in the same robot as the Nano will be used for processing images (openCV applications) and run all the algorithms and at the same time the dev module will be used to manage the motors and all the other sensors that do not require high ammounts of processing. The 2 developer boards will co-exist in the rover. The team here used the STM32F407VET6 DEV MODULE  to control the robotic arm by taking the data from the camera processed by the jetson orin nano, and another board (not specified, maybe STM32F407VET6 or the Nano) is used for the control of the wheel drive.
 
 1.6.Manupilator:
 
--The manupilator used by team obseract is of a screw type system in which one jaw of the manupilator stays still, there is an axle passed through the jaws which has threads and works like a screw to help the other jaw move by rotating the screw type axle. This jaw is good as the rotation of motor can be very precise, hence making the manupilator go easy on the samly tube and not exert too much pressure on the tube as good care of tube also carries some points.
+-The manupilator used by team obseract is of a screw type system in which one jaw of the manupilator stays still, there is an axle passed through the jaws which has threads and works like a screw to help the other jaw move by rotating the screw type axle. This jaw is good as the rotation of motor can be very precise, hence making the manupilator go easy on the sample tube and not excert too much pressure on the tube as good care of tube also carries some points.
 
--The jaws are distanced enough to pick up the sample tube in any orientation and there is only one degree of movement of the arm as approaching towards the sample object is done by the drive of the rover itself, hence the only degree of movement left is the one which helps the arm go up and down like the shoulders of a human arm.
+-The jaws are distanced enough to pick up the sample tube in any orientation and there are 3 degree of movement of the arm: first approaches towards the sample object like the human elbow , the second helps the arm go up and down like the shoulders of a human arm and the third one is which twists the claw 360 degrees like the human wrist, this one helps to pick up the sample tube in its specified orientation.
 
--![image](https://github.com/user-attachments/assets/7d0836e4-80c1-4b9d-96c0-20086d67d37f)
+-![image](https://github.com/user-attachments/assets/c4a848f8-10cb-4b78-bc65-02c9a9cfccca)
 
--
+1.7.Algorithms: No information to be found obout their game plan and their algorithms
+
+
