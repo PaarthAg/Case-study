@@ -25,7 +25,7 @@ Here MER is Mars exploration rover.
 -The use of Rocker bogie suspension makes it obvious that diffrential driving technique is used to turn to robot for all the cases and the slow speed of the rover helps the rover to make very minute turns, which further helps us eliminate the use of another degree of movement for the manupilator and the drive itself aids the manupilator in pickup of the sample accurately.
 
 
-1.3.Tyres: 
+1.3.Drive: 
 
 To traverse in the M-sand area the rover used wheels of the following properties:-
 
@@ -111,7 +111,7 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -This team too uses diffrential drive mechanism for turning.
 
-2.3. Tyres:-
+2.3. Drive:-
 
 -The design of the tyres used by team samarth is very unique as the tyre is not one continous cylinder, and the cleats of the tyres are in different directions too.
 
@@ -167,9 +167,9 @@ To traverse in the M-sand area the rover used wheels of the following properties
 2.6. Manupilator:-
 
 -The manupilator has 3 degrees of freedom:-
-1.Helps the manupilator reach forward.
-2.Goes up and down.
-3.goes sideways.
+1.Helps the manupilator reach forward.(elbow)
+2.Goes up and down.(shoulder)
+3.goes sideways.(shoulder)
 
 -The manupilator uses 5 25kg torque motors for high accuracy.
 
@@ -191,3 +191,151 @@ To traverse in the M-sand area the rover used wheels of the following properties
 -If in between the rover senses that any non traversable obstacles may colide with any of the parts of the rover, the robot mooves away to a safe distance from the obstacle and still keeps moving in the direction of the container, in this process te rver still detects te traversable obstacles.
 
 -Finally after reaching to the final point the rover again uses inverse kinematic calculations to plan a path of the manupilator to safely drop the sample in the drop point. After the drop, the rover analyses its surroundings and moves out of the final point safely and parks itself.
+
+
+3.**Team shunya - IIITD Kancheepuram**:-
+
+3.1.Size:-
+
+-Weight: 48.8 Kg
+
+-Size: 97cm x 71cm x 60cm 
+
+3.2.Suspension system:-
+
+-This team uses a unique triple bogie system for this robot.
+
+-In this system the front 4 tyres are connected parallel to each other by bogie mechanism on each side and the the 2 tyres behind are connected to each other by another bogie mechanism.
+
+-The rocker bogie system is not better than the rocker bogie system for the applications of this project as the triple bogie system is phenomenal for load bearing as it has more support and is more stable, but that is not the task in this challenge, the use of the triple bogie system is more complex, uses more materials and is not better than rocker bogie system for traversing in a rough terrain. The challenge does not show much emphasis on the rover's ability to traverse through a very rough terrain, for which rocker bogie would be would had been the best option if aiming for simplicity, but in this competition triple bogie suspension wouldd work just fine, but may require the use of more materials.
+
+-On the other hand the triple bogie system undeniable makes it much more simples to fit the steering system on the the rover, hence making it a better choice for the use of the steering system rather than the diffrential drive mechanism.
+
+-The suspension system is made using sheet metal as the metal is strong enough for our applications and the metal is light, helping the rover be under 50 Kgs weight limit.
+
+-![image](https://github.com/user-attachments/assets/a5b44828-7a9d-4668-8be4-cacff5fbfd8e)
+
+
+3.3.Drive:-
+
+-The wheel mount and the wheel are made using sheet metal and some plastic parts. Sheet metal is easy to bend, making it easy to morph into the desired shape and keep the system light while being sturdy.
+
+-![image](https://github.com/user-attachments/assets/960185d5-847f-4ab2-8f70-da2e236885a1)
+
+-As we can see the design of the wheels is very unique as the wheels use a specific cleat shapes that is able to push the sand backwards and help the rover in moving forward with great traction.
+
+-The curved design of the cleats is specifically for the ease of turning of the wheels without any vibrations.
+
+-2 RMCS motors are used for 4 each wheels and 1 each for 2 (middle wheels). One RMCS is used for turning and the other is used to rotate the wheel.
+
+-The use of RMCS motors is a good decision due to its high torque output and its inbuilt encoders helping the motor to make precise movements.
+
+-![image](https://github.com/user-attachments/assets/3a75afac-70ec-47c5-bade-bd48700823eb)
+
+-The rover uses encoders as a feedback mechanism for the steering part of this system.
+
+-This team is unique in the terns of using a steering mechanism rather than a diffrential drive mechanism. This mechanism has the following advantages and disadvantages:-
+
+1.Advantages:-
+
+i)Easy on-point turning.
+
+ii)More accurate turning.
+
+iii)More versatile movement.
+
+iv)The rover saves time on going back and then turning back to the direction it wants to go, here the rover will turn into any direction it wants t go to instantly and then thart moving.
+
+2.Disadvantages:-
+
+i)Cost of motors add up.
+
+ii)The gear mechanism occupies more space.
+
+iii)The wide design of the wheels forces the rover to stop, turn the wheels and then move, hence making it slower.
+
+-As we can see there are many advantages and disadvantages of this system. But the team prioritizes on accuracy of their movement with efficiency over saving volume and money, hence they use the steering mechanism.
+
+-The steering motors are given +60 to -60 degrees freedom of movement to each of the turnable tyres.
+
+-PID control system is needed for precise movement control with taking feedback from the encoders.
+
+-The drive system is integrated with the motor controlling software witht the help of ROS serial. ROS serial is a protocol that enables the communication between a computer and a microcontroller (like arduino). This makes the microcontroller a ROS node and then the microcontroller is connected to the ROS computer and then transmission of data can happen easily between the computer and the microcontroller, so if there is some complex processing that the microcontroller is not able to do by itself, the ROS helps the microcontroller by connecting it to a computer which can perfom tasks like openCV and then give direct commands to the microcontroller. ROS is advantageous in the sense that it makes a simple ROS system which in a way connects the sensors and the actuators directly to the computer.
+
+-The steering mechanism uses gears to reduce the vibrations that may occur while turning the wheels by other mechanisms. This is necessary because the rover uses camera and depth cameras to map its surroundings by making laser scans, but if there are too many vibrations, then there would be too much error in the mapping, which can make the whole mission to go into shambles.
+
+
+3.4.Camera Systems:-
+
+-The rover uses the ZED 2i stereo camera which offers the following:-
+
+1.RGB data, useful for colour detection of the sample target ad the drop point.
+
+2.Depth perception, the camera uses infrared time of flight sensors to measure the distance of different objects from the camera.
+
+3.The camera also provides point cloud data, that means that the camera maps the areas it can see and make a 3D map of each of the detected elements, making the algorithms written for the rover to avoid obstacles and movement towards the targets much more simpler.
+
+-The manupilator uses another different camera which uses openCV to detect the drop point and the sample target, and helps the manupilator to pick up the sample target precisely.
+
+-The rover uses depth image to laser scan package as the depths percieved are converted into laser scans, which helps massively in the mapping done by the camera system.
+
+-The team prefers to use SLAM mapping package which automatically takes data from ZED 2i stereo camera and maps it in a plane in real time, hence enabling it to map the surroundings as the rover keeps on moving. The team uses G-Mapping which uses the laser scan data to create the map. G-mapping is a part of the SLAM algorithm andd helps a lot in this project by seamless mapping of the arena.
+
+-![image](https://github.com/user-attachments/assets/b47892cb-83e3-40d3-ac76-ab3d53d51bd5)
+
+-This mapping system helps the rover to navigate much more easily through partially mapped or completely unkown areas. The technology drastically reduces the stress for the algorithms part.
+
+-The openCV detection process is done by YOLO 8. YOLO is an algorithm which has a library of objects that it can detect by the camera feed, or you can use machine learning to train YOLO the objects that you desire, then the YOLO algorithm can detect the objects that you have trained it to detect. To enable detection, we use graphic view softwares to annotate the images with the objects and then that annotation's image data is stored in a class (class name is chosen by us) by the annotation program and then after further processing we have the YOLO ready to detect our desired objects. This is called transfered learning which this team has used in this rover.
+
+
+3.5.Electronics used:- 
+
+-The motors and sensors usedd are the same as the ones specified in this whole report, ie. RMCS motors which have inbuilt encoder, stepper motor, force sensor, ZED 2i stereo camera which has depth camera in it.
+
+-Potentially an IMU was being usedd to find the orientation of the rover hence helping the the stability of the mapping done by the robot.
+
+-There was no information specified on the Circuit boards, developer boards used. It was specified that they made their own PCB for the processing of the data, but no further ddetails were given.
+3.6. Manupilator:-
+
+-The robot is claimed to have 5 degrees of freedom out of which the usual elbow and shoulder joints are obvious and the other 2 degrees can be of the wrist joints.
+
+-Each joint is using RMCS high torque motors and encoders for very precise movements.
+
+-The claw is powered by rotating gears that turn a worm gear and then on them slide our grippers, which enable very gentle pickup of the sample tube.
+
+-The manupilator uses materials like the Aluminium 6061 due to it being light weight yet sturdy. They also use PETG for 3D printing beacuse of its strength and light weight.
+
+-The team uses servo motors in the claws' mechanism because of servo motor's accurate and controlled rotation.
+
+-The manupilator is assisted by a camera that instructs the manupilator in real time to be able to precisely pick up and drop the target.
+
+-The team mentions using force and stress sensors in the manupilator too, this maybe done to detect when the gripper has gripped the sample target firm enough and help the rover not over exert on the sample target.
+
+-The team also uses pulley mechanisms in the arm links to have much more accurate and precise movements.
+
+-The pulley mechanism helps the robot to concentrate the weight of the motors at the centre of the base, making the manupilator's movements much more predictable and stable.
+
+-![image](https://github.com/user-attachments/assets/cb4adfdb-ba5d-47dd-a770-00afd3a35660)
+
+-Other than the RMCS motor and the servo motor at the gripper the rover has a stepper motor has been used in the assembly, this motor is highly precise and gives the count of how much it has moved.
+
+-The RMCS motors have encoders in them, so they give the value of encoders as an input to the computer too.
+
+-The Team uses PID for error correction and much more precise movements, the PID uses position as feedback loop, which means that the position of manupilator is constantly update with the use of stepper count, encoder's information and the data sent by the camera, and the motors are tasked to move just enough that the manupilator aligns with the desired position and then keeps on repositioning until the manupilator is precisely at the required position. The PID does this with the analysis of 3 factors: The current error (proportional), the accumulated past errors (integral) and the rate of change of error (derivative).
+
+-The whole system is powered by a 12V battery.
+
+-The manupilator also applies limit switches. Limit switches are such switches which detect that a mechanical part has reached a certain point using any actuators and notifies the same to the system. These switches are mostly used for safety purposes in many machines (safety of the machine).
+
+
+3.7.Algorithms:
+
+-The rover first starts in the command/pre-programmed mode which is good enough to help the rover to reach to the way-point. But during this process the rover keeps on mapping the arena.
+
+-After reaching to the way point, the manupilator camera start to look for the sample target using openCV, then the algorithm uses the position of sample tube to be the target position, the encoders of RMCS high torque motors give the current position of the manupilator, then the algorithm uses this as the feedback for the PID and keeps on changing the position of the manupilator constantly with the help of the algorithm and picks up the sample tube with absolute accuracy.
+
+-Then the rover uses the pre mapped information of the arena and its current positions its dimensions to trace the best path to the drop point, it is able to detect each of the traversable obstacles that is was not able to see before but just rams over them. Then the rover uses its steering, which is controlled by the drive controlling software to find which way does it need to turn for how much angle and time. The angles are decided by running kinematic calculations to trace the most optimal path.
+
+-After reaching to the final point, the rover's main camera and the manupilators camera coordinate to find the droping container and the sample target is dropped in the same manner that it was picked up.
+
+-THen the rover will just back out of the final point using the mappe surrouning's data.
