@@ -132,10 +132,9 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -This team too uses openCV to detect the objects.
 
--                                                                                          ///Lidar///
+-The team has used a normal webcam which tranmits feed to the computer, the output of this camera is used for openCV.
 
--                                                                                         ///Ultrasonic///
-
+-The team uses anoter camera mounted at the very top of the rover, this is a FPV camera which is used in drones and this camera transfers analog feed to the ground station computer.
 
 2.5. Electronics used:-
 
@@ -144,8 +143,6 @@ To traverse in the M-sand area the rover used wheels of the following properties
 -The transmitter reciever system for the rover is: transmiter:TS832 FPV transmiter, Reciever: RC832. This transmiter reciever pair is mostly used in FPV drones and show a very low latency feed.
 
 -For data transmission the team uses NRF24L01 PA LNA trans reciever module which operates on 2.4 GHz frequency and is used by the team to transmit data such as the data of the distance which is calculated live by the ground station computer.
-
--The team seems to be using a their own comuputer as the one which does all the computational and openCV tasks and the rover just provides data to the ground station via radio signals and then the ground station works as the control system and then it send commands of what has to be done next to the rover. (This statement can be analysed by the video in which one of the team members mention live distance calculation telling about the data transmission system using the NRF24L01 PA LNA trans reviever module, which does not send the FPV feed, and hence the only use of it can be to help the rover perform the complex task like openCV remotely in the ground station).
 
 -The team mentions using a self designed motor driver board which is responsible for the precise movement of the motors during the mission.
 
@@ -157,16 +154,40 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 3.Is compatible with 2.4 GHz and 5 GHz frequency for communication, making it better for the already chosen transmitter reciever pair.
 
--The raspbery pi is most likely used to control sensors and motors and transmit the required data to the ground station. The raspberry pi is more likely to control actuators than run the openCV program on itself due to the high amounts of load that it will have to face.
+-The raspbery pi has a very powerful processing unit and is capable enough to run the openCV commands on the rover itself and then command the motors to take the further actions.
 
--                                                                              ///resolve the main processing unit problem///
+-The rover does not limit itself to cameras, but uses LIDAR and ultrasonic sensors too.
+
+-The use of ultrasonic sensors is a bit illogical here as if the rover is being made to traverse on extraterrestrial surfaces such as the moon, hence the ultrasonic sensors rould not be applicable there making it only functional for the earthly environments, a better alternative would have been the use of IR sensors which do the same work, but use infrared light rays to measure distance unlike the sound used by the ultrasonic sensors.
+
+-Lidar is a great techology to be used on this rover, where the surroundings will be clear (no rain or dust) and LIDAR has pinpoint accuracy, helping the rover map its surroundings and not bash into any obstacle.
+
+-The team has used the mini LIDAR (Time of flight) sensor as it is able to easily fit in the rover and calculates the distances of objects in front only.
 
 2.6. Manupilator:-
 
--The manupilator has 5 degrees of freedom.
+-The manupilator has 3 degrees of freedom:-
+1.Helps the manupilator reach forward.
+2.Goes up and down.
+3.goes sideways.
 
 -The manupilator uses 5 25kg torque motors for high accuracy.
 
 -The teams are noticed to be using inverse kinematics to find the exact location of their claw and be able to pick up the sample tube. Even team obseract used this technology.
 
--
+-The manupilator jaw is a simply mechanism and is very gentle as the tube used by the team to demonstrate was made of paper and the manupilator did not crush it.
+
+-The robot is able to self analyse the amounts in needs to move to be able to grip the sample tube and drop it.
+
+
+2.7.Algorithms:-
+
+-The Robot uses the webcam to detect the sample tube and then uses inverse kinematic calculations to be able to tell that how much it needs to move in what direction to be able to securely hold the sample tube. 
+
+-The robot uses openCV to detect the sample target and the the sample container and uses lidar + openCV to measure the distance of the rover from the object.
+
+-Next the rover starts to rotate clockwise until the blue sample is in linear alignment to the rover and then starts to surge towards the container.
+
+-If in between the rover senses that any non traversable obstacles may colide with any of the parts of the rover, the robot mooves away to a safe distance from the obstacle and still keeps moving in the direction of the container, in this process te rver still detects te traversable obstacles.
+
+-Finally after reaching to the final point the rover again uses inverse kinematic calculations to plan a path of the manupilator to safely drop the sample in the drop point. After the drop, the rover analyses its surroundings and moves out of the final point safely and parks itself.
