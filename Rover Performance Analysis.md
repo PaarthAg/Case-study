@@ -52,7 +52,7 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -![image](https://github.com/user-attachments/assets/0fa88e7b-5ce1-4015-8cef-e7c570f7896a)
 
--It is seen that the robot uses only one onboard camera which helps it detect the blocks, sample target and drop point.
+-It is seen that the robot uses 2 onboard camera, one which helps it detect the blocks and the other helps with the pickup of the sample.
 
 -The detection of the different objects is a result of training an AI model using machine learning to be able to detect the objects and the object's annotations helps the rover to make decisions about the detected objects.
 
@@ -94,7 +94,7 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -The manupilator used by team obseract is of a screw type system in which one jaw of the manupilator stays still, there is an axle passed through the jaws which has threads and works like a screw to help the other jaw move by rotating the screw type axle. This jaw is good as the rotation of motor can be very precise, hence making the manupilator go easy on the sample tube and not excert too much pressure on the tube as good care of tube also carries some points.
 
--The jaws are distanced enough to pick up the sample tube in any orientation and there are 3 degree of movement of the arm: first approaches towards the sample object like the human elbow , the second helps the arm go up and down like the shoulders of a human arm and the third one is which twists the claw 360 degrees like the human wrist, this one helps to pick up the sample tube in its specified orientation.
+-The jaws are distanced enough to pick up the sample tube in any orientation and there are 4 degree of movement of the arm: first approaches towards the sample object like the human elbow , the second helps the arm go up and down like the shoulders of a human arm, the third one is which twists the claw 360 degrees like the human wrist, this one helps to pick up the sample tube in its specified orientation and at last there is one more shoulder type joint which moves the arm side ways, this last degree of freedom is given by a turntable type design on which the manupilator is placed, and the turn table is operated by a stepper motor and belt system.
 
 -![image](https://github.com/user-attachments/assets/c4a848f8-10cb-4b78-bc65-02c9a9cfccca)
 
@@ -140,11 +140,11 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -The team has used a normal webcam which tranmits feed to the computer, the output of this camera is used for openCV.
 
--The team uses anoter camera mounted at the very top of the rover, this is a FPV camera which is used in drones and this camera transfers analog feed to the ground station computer.
+-The team uses another camera mounted at the very top of the rover, this is a FPV camera which is used in drones and this camera transfers analog feed to the ground station computer.
 
 2.5. Electronics used:-
 
--The system uses 5.8 GHz frrquency to communicate witht he control base and show the telemetry feed.
+-The system uses 5.8 GHz frrquency to communicate with the control base and show the telemetry feed.
 
 -The transmitter reciever system for the rover is: transmiter:TS832 FPV transmiter, Reciever: RC832. This transmiter reciever pair is mostly used in FPV drones and show a very low latency feed.
 
