@@ -37,6 +37,8 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -The slow speed and ability to climb the 15 degrees slope shows us the power of its motor, meaning that the motors used priortize on torque and not angular speed.
 
+-The wheels use stepper motors too which give feedback on their rotation and provide very precise movements.
+
 
 1.4.Camera System:
 
