@@ -96,6 +96,8 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -![image](https://github.com/user-attachments/assets/c4a848f8-10cb-4b78-bc65-02c9a9cfccca)
 
+-The team has used stepper motors for the manupilators due to steir high accuracy which is needed while the pick and drop.
+
 
 1.7.Algorithms: No information to be found obout their game plan and their algorithms
 
