@@ -24,6 +24,8 @@ Here MER is Mars exploration rover.
 
 -The use of Rocker bogie suspension makes it obvious that diffrential driving technique is used to turn to robot for all the cases and the slow speed of the rover helps the rover to make very minute turns, which further helps us eliminate the use of another degree of movement for the manupilator and the drive itself aids the manupilator in pickup of the sample accurately.
 
+-The weight balance of this rover is really good as the team has put the manupilator not on the main computer body, but rather in front of the computers, making the 2 major weights balance out each other.
+
 
 1.3.Drive: 
 
@@ -52,7 +54,7 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 -The detection of the different objects is a result of training an AI model using machine learning to be able to detect the objects and the object's annotations helps the rover to make decisions about the detected objects.
 
--The team also uses a depth camera, which can measure the distance between itself and the objects using time taken for infrared signals to bounce back to the camera. The camera hence is able to make a 3D image of whatever it is seeing and makes this the perfect camera for such a project. This camera also reduces the need of using different techniques in openCV to find the distances between 2 objects by using 1 as refrence.
+-The team also uses a depth camera, which can measure the distance between itself and the objects using time taken for infrared signals to bounce back to the camera. The camera hence is able to make a 3D image of whatever it is seeing and makes this the perfect camera for such a project. This camera also reduces the need of using different techniques in openCV to find the distances between 2 objects by using 1 as reference (the size of the reference object is known).
 
 -![image](https://github.com/user-attachments/assets/b466e60e-939b-46ff-9a96-b24426904540)
 
