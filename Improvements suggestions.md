@@ -2,6 +2,24 @@ Introduction: There were multiple rovers that were participating in the IRoC-U 2
 
 Contents:
 
+1.Team Obseract - Jadavpur University
+
+    1.1.Tyres
+    1.2.Antenna used
+    1.3.Suspension.
+
+2.Team Samarth - Sharda Unviersity
+
+    2.1.Tyres
+    2.2.Use of Ultrasonic Sensors
+
+3.Team Shunya - IIITD Kancheepuram
+
+    3.1.Drive
+    3.2.Suspension
+    3.3.Manupilator placement
+    3.4.Manupilator camera placement
+
 
 1. Team Obseract - Jadavpur University
 
