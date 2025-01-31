@@ -1,8 +1,61 @@
-Introduction: In this document we are going to analyse the robots of different team that participated in the ISRO robotics challenge 2024. There were only 20 teams that qualified for the field round.
+Introduction: In this document we are going to analyse the robots of different team that participated in the ISRO robotics challenge 2024. There were only 20 teams that qualified for the field round. In the whole of research there were no videos of the field round, hence the algorithms mentioned are solely based of the qualifiers round. The research done is with the offcial youtube videos of the teams.
+
 
 Contents:
 
+1.Team obseract - Jadavpur University
+
+    1.1.Size and weight
+  
+    1.2.Suspension system
+  
+    1.3.Drive
+  
+    1.4.Camera System
+  
+    1.5.Electronics Used
+  
+    1.6.Manupilator
+  
+    1.7.Algorithms
+
+2.Team Samarth - Sharda University
+
+    2.1.Size and weight
+  
+    2.2.Suspension system
+  
+    2.3.Drive
+  
+    2.4.Camera System
+  
+    2.5.Electronics Used
+  
+    2.6.Manupilator
+  
+    2.7.Algorithms
+
+3.Team Shunya - IIITD Kancheepuram
+
+    3.1.Size and weight
+  
+    3.2.Suspension system
+  
+    3.3.Drive
+  
+    3.4.Camera System
+  
+    3.5.Electronics Used
+  
+    3.6.Manupilator
+  
+    3.7.Algorithms
+
+  
+
 1.**Team Obseract-Jadavpur University**:-
+
+![image](https://github.com/user-attachments/assets/e4144632-f157-407b-b0fd-fb34daa676a9)
 
 
 1.1.Size and weight: size: 87cmx70cmx77cm, weight: 39kg
@@ -107,6 +160,9 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 2.**Team Samarth - Sharda University**:-
 
+![image](https://github.com/user-attachments/assets/3868a52e-7f1c-4178-ab02-4804017c7f64)
+
+
 2.1. Size and weight: size: 98cm x 57cm x 73cm, weight: Unspecified.
 
 2.2. Suspension system:-
@@ -200,6 +256,9 @@ To traverse in the M-sand area the rover used wheels of the following properties
 
 
 3.**Team shunya - IIITD Kancheepuram**:-
+
+![image](https://github.com/user-attachments/assets/cf426148-897e-4d35-853f-a8ea219745f0)
+
 
 3.1.Size:-
 
